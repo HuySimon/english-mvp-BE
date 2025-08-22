@@ -8,7 +8,7 @@ const express_1 = require("express");
 dotenv.config();
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
-    app.enableCors({ origin: ["https://english-mvp-k1pl.vercel.app/"], credentials: true });
+    app.enableCors({ origin: ["http://localhost:5173", "https://english-mvp-e8ga.vercel.app"], credentials: true });
     app.use((0, express_1.json)({ limit: '1mb' }));
     app.useGlobalPipes(new common_1.ValidationPipe({ whitelist: true }));
     const port = process.env.PORT || 3000;
